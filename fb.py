@@ -441,107 +441,17 @@ class ChatBot(Client):
                     sendQuery()
                 except:
                     pass
-            elif ("busy" in msg):
-                reply = "Not at all"
+            elif("slr" in msg):
+                reply="Okay lang, Please wait for my Master's Reply "
                 sendMsg()
-            elif("how are you" in msg):
-                reply="I am good. What's about you?"
+            elif("Hai" in msg):
+                reply="Wait For Jan's Reply. Note: This is Auto Message Created By My Master / JAN"
                 sendMsg()
-            elif("hlw" in msg):
-                reply="hi"
+            elif("Hi" in msg):
+                reply="Wait For Jan's Reply. Note: This is Auto Message Created By My Master / JAN"
                 sendMsg()
-            elif("hey" in msg):
-                reply="Hi, how are you?"
-                sendMsg()
-            elif("ok" in msg):
-                reply="🤩"
-                sendMsg()
-            elif("same to you" in msg):
-                reply="Thank you 😊"
-                sendMsg()
-            elif("Who are you" in msg):
-                reply="I am NTM assistant Chat Bot"
-                sendMsg()
-            elif("bot" in msg):
-                reply="hmm.. I am NTM assistant Bot developed by NTM"
-                sendMsg()
-            elif("Welcome" in msg):
-                reply="It's my Pleasure 😊"
-                sendMsg()
-            elif("tq" in msg):
-                reply="Welcome 😊"
-                sendMsg()
-            elif("tqsm" in msg):
-                reply="Welcome 😊"
-                sendMsg()
-            elif("help" in msg):
-                reply = "Sure! What should I do?"
-                sendMsg()
-            elif("clever" in msg):
-                reply = "Yes, i am clever. hope you will be clever soon."
-                sendMsg()
-            elif("crazy" in msg):
-                reply = "Anything wrong about that."
-                sendMsg()
-            elif ("are funny" in msg):
-                reply = "No. I am not. You are."
-                sendMsg()
-            elif ("marry me" in msg):
-                reply = "Yes, if you are nice and kind girl. But if you are boy RIP."
-                sendMsg()
-            elif ("you from" in msg):
-                reply = "I am from Nepal. Currently living in Kathmandu"
-                sendMsg()
-            elif ("you sure" in msg):
-                reply = "Yes. I'm sure."
-                sendMsg()
-            elif ("great" in msg):
-                reply = "Thanks!"
-                sendMsg()
-            elif ("no problem" in msg):
-                reply = "Okay😊🙂"
-                sendMsg()
-            elif ("thank you" in msg):
-                reply = "You're welcome😊🙂"
-                sendMsg()
-            elif ("thanks" in msg):
-                reply = "You're welcome🙂"
-                sendMsg()
-            elif ("well done" in msg):
-                reply = "Thanks🙂"
-                sendMsg()
-            elif ("wow" in msg):
-                reply = "🙂😊"
-                sendMsg()
-            elif ("wow" in msg):
-                reply = "🙂😊"
-                sendMsg()
-            elif ("bye" in msg):
-                reply = "bye👋 Take care"
-                sendMsg()
-            elif ("good morning" in msg):
-                reply = "Good Morning🌅🌺 and Have a nice day."
-                sendMsg()
-            elif ("goodnight" in msg):
-                reply = "Good night🌃🌙 and have a ghost dream"
-                sendMsg()
-            elif ("good night" in msg):
-                reply = "good night🌃🌙 and have a ghost dream"
-                sendMsg()
-            elif ("hello" in msg):
-                reply = "Hi"
-                sendMsg()
-            elif ("hello" in msg or "hlo" in msg or "hii" in msg):
-                reply = "Hi"
-                sendMsg()
-            elif (msg == "hi"):
-                reply = "Hello! How can I help you?"
-                sendMsg()
-            elif ("gm" in msg):
-                reply = "Good Morning🌅🌺 and Have a nice day."
-                sendMsg()
-            elif ("gn" in msg):
-                reply = "Good night🌃🌙 and Have a ghost dream"
+            elif("Hello" in msg):
+                reply="Wait For Jan's Reply. Note: This is Auto Message Created By My Master / JAN"
                 sendMsg()
 
         except Exception as e:
@@ -569,7 +479,7 @@ class ChatBot(Client):
                 if(".mp4" in unsent_msg):
 
                     if(thread_type == ThreadType.USER):
-                        reply = f"You just unsent a video"
+                        reply = f"You just unsent a video\nBot made by Jan"
                         self.send(Message(text=reply), thread_id=thread_id,
                                   thread_type=thread_type)
                         self.sendRemoteFiles(
@@ -578,7 +488,7 @@ class ChatBot(Client):
                         user = self.fetchUserInfo(f"{author_id}")[
                             f"{author_id}"]
                         username = user.name.split()[0]
-                        reply = f"{username} just unsent a video"
+                        reply = f"{username} just unsent a video\nBot made by Jan"
                         self.send(Message(text=reply), thread_id=thread_id,
                                   thread_type=thread_type)
                         self.sendRemoteFiles(
@@ -586,7 +496,7 @@ class ChatBot(Client):
                 elif("//scontent.xx.fbc" in unsent_msg):
 
                     if(thread_type == ThreadType.USER):
-                        reply = f"You just unsent an image"
+                        reply = f"You just unsent an image\nBot made by Jan"
                         self.send(Message(text=reply), thread_id=thread_id,
                                   thread_type=thread_type)
                         self.sendRemoteFiles(
@@ -595,21 +505,21 @@ class ChatBot(Client):
                         user = self.fetchUserInfo(f"{author_id}")[
                             f"{author_id}"]
                         username = user.name.split()[0]
-                        reply = f"{username} just unsent an image"
+                        reply = f"{username} just unsent an image\nBot made by Jan"
                         self.send(Message(text=reply), thread_id=thread_id,
                                   thread_type=thread_type)
                         self.sendRemoteFiles(
                             file_urls=unsent_msg, message=None, thread_id=thread_id, thread_type=ThreadType.GROUP)
                 else:
                     if(thread_type == ThreadType.USER):
-                        reply = f"You just unsent a message:\n{unsent_msg} "
+                        reply = f"You just unsent a message:\n{unsent_msg}\nBOT MADE BY Jan"
                         self.send(Message(text=reply), thread_id=thread_id,
                                   thread_type=thread_type)
                     elif(thread_type == ThreadType.GROUP):
                         user = self.fetchUserInfo(f"{author_id}")[
                             f"{author_id}"]
                         username = user.name.split()[0]
-                        reply = f"{username} just unsent a message:\n{unsent_msg}"
+                        reply = f"{username} just unsent a message:\n{unsent_msg}\nBot Made by Jan"
                         self.send(Message(text=reply), thread_id=thread_id,
                                   thread_type=thread_type)
 
@@ -637,7 +547,7 @@ class ChatBot(Client):
                   thread_type=thread_type)
 
     def onReactionRemoved(self, mid=None, author_id=None, thread_id=None, thread_type=ThreadType.USER, **kwargs):
-        reply = "You just removed reaction from the message."
+        reply = "You just removed reaction from the message.\nBot made by Jan"
         self.send(Message(text=reply), thread_id=thread_id,
                   thread_type=thread_type)
 
